@@ -19,12 +19,6 @@
       <artifactId>credential-service</artifactId>
       <version>0.0.12-SNAPSHOT</version>
     </dependency>
-    <dependency>
-      <groupId>org.project</groupId>
-      <artifactId>giuthub-package-test</artifactId>
-      <version>0.0.2</version>
-    </dependency>
-
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
