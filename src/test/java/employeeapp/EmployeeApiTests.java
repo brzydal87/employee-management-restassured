@@ -1,5 +1,6 @@
 package employeeapp;
 
+
 import common.providers.DataProvider;
 import common.utils.JsonUtils;
 import org.junit.jupiter.api.AfterEach;
@@ -11,6 +12,7 @@ import static org.hamcrest.Matchers.greaterThan;
 public class EmployeeApiTests extends BasicTest{
 
     private String createdEmployeeId;
+    
 
     @Test
     public void testGetAllEmployees() {
@@ -24,6 +26,7 @@ public class EmployeeApiTests extends BasicTest{
                 .statusCode(200)
                 .body("size()", greaterThan(0));
     }
+
 
     @Test
     public void testCreateEmployee() {

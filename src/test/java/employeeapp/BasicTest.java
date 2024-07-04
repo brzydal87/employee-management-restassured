@@ -1,6 +1,6 @@
 package employeeapp;
 
-import com.example.credential_service.UserEntity;
+import app.credential_service.UserEntity;
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.http.ResponseEntity;
@@ -9,11 +9,11 @@ import org.springframework.web.client.RestTemplate;
 public class BasicTest {
 
     private static final String CREDENTIAL_SERVICE_URL = "http://localhost:8081/api/users/";
-    protected static final String BASE_URL = "http://localhost:8080/api/employees"; // Adjust as per your application's base URL
+    protected static final String BASE_URL = "http://localhost:8088/api/employees"; // Adjust as per your application's base URL
     protected static UserEntity managerUser;
     protected static UserEntity regularUser;
     private static RestTemplate restTemplate;
-
+    
     @BeforeEach
     public void setup() {
         RestAssured.baseURI = "http://localhost";

@@ -1,6 +1,6 @@
 package common.utils;
 
-import com.example.credential_service.UserEntity;
+import app.credential_service.UserEntity;
 import common.model.Employee;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
