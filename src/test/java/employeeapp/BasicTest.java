@@ -17,7 +17,7 @@ public class BasicTest {
     @BeforeEach
     public void setup() {
         RestAssured.baseURI = "http://localhost";
-        RestAssured.port = 8080;
+        //RestAssured.port = 8080;
         restTemplate = new RestTemplate();
         managerUser = getCredentialsByRole("MANAGER");
         regularUser = getCredentialsByRole("REGULAR");

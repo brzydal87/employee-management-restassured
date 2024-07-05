@@ -9,7 +9,7 @@ import static io.restassured.RestAssured.given;
 
 public class ApiUtils {
 
-    private static final String BASE_URL = "http://localhost:8080/api/employees";
+    private static final String BASE_URL = "http://localhost:8088/api/employees"; //todo move to config
 
     public static Response createEmployee(UserEntity user, Employee employee){
         String requestBody = JsonUtils.toJson(employee);

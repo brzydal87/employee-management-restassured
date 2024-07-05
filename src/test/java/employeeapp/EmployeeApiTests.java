@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.greaterThan;
 
-public class EmployeeApiTests extends BasicTest{
+public class EmployeeApiTests extends BasicTest {
 
     private String createdEmployeeId;
     
