@@ -2,6 +2,7 @@ package employeeapp;
 
 
 import common.providers.DataProvider;
+import common.utils.ApiUtils;
 import common.utils.JsonUtils;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
@@ -42,6 +43,11 @@ public class EmployeeApiTests extends BasicTest {
                 .statusCode(201)
                 .extract()
                 .path("id");
+    }
+
+    @Test
+    public void testCreateEmployeeFromApiUtils() {
+        ApiUtils.createEmployee(managerUser, DataProvider.getEmployee());
     }
 
     @AfterEach

@@ -26,7 +26,7 @@ public class ApiUtils {
                 .contentType("application/json")
                 .body(requestBody)
                 .when()
-                .post("/api/employees");
+                .post(BASE_URL);
 
         return response;
     }
