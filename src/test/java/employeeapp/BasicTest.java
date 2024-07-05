@@ -1,7 +1,9 @@
 package employeeapp;
 
 import app.credential_service.UserEntity;
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
@@ -13,6 +15,11 @@ public class BasicTest {
     protected static UserEntity managerUser;
     protected static UserEntity regularUser;
     private static RestTemplate restTemplate;
+
+    @BeforeAll
+    public static void set(){
+        RestAssured.filters(new AllureRestAssured());
+    }
     
     @BeforeEach
     public void setup() {
@@ -21,6 +28,8 @@ public class BasicTest {
         restTemplate = new RestTemplate();
         managerUser = getCredentialsByRole("MANAGER");
         regularUser = getCredentialsByRole("REGULAR");
+        RestAssured.filters(new AllureRestAssured());
+
     }
 
     private UserEntity getCredentialsByRole(String role) {
