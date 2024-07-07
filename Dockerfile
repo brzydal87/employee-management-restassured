@@ -10,6 +10,6 @@ COPY src ./src
 
 RUN chmod +x mvnw
 
-RUN ./mvnw clean test
+RUN mvn clean test
 
 COPY target/allure-results /app/target/allure-results
