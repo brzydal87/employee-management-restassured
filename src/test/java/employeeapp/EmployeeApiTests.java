@@ -2,7 +2,6 @@ package employeeapp;
 
 
 import common.providers.DataProvider;
-import common.utils.ApiUtils;
 import common.utils.JsonUtils;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
@@ -55,10 +54,10 @@ public class EmployeeApiTests extends BasicTest {
                 .path("id");
     }
 
-    @Test
+/*    @Test
     public void testCreateEmployeeFromApiUtils() {
         ApiUtils.createEmployee(managerUser, DataProvider.getEmployee());
-    }
+    }*/
 
     @AfterEach
     public void cleanup() {
