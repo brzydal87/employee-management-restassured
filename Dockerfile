@@ -11,7 +11,7 @@ COPY pom.xml .
 COPY src ./src
 
 # Build the application
-RUN mvn clean package
+RUN mvn clean test
 
 # Expose the application port
 EXPOSE 8080
