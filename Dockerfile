@@ -1,14 +1,11 @@
 FROM openjdk:21-jdk-slim
 
+RUN apt-get update && apt-get install -y maven
+
 WORKDIR /app
 
-COPY mvnw .
-COPY .mvn .mvn
 COPY pom.xml .
-
 COPY src ./src
-
-RUN chmod +x mvnw
 
 RUN mvn clean test
 
