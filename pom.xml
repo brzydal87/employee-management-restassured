@@ -26,7 +26,7 @@
       <version>${rest-assured.version}</version> <!-- Replace with the latest version -->
     </dependency>
 
-    <dependency>
+   <dependency>
       <groupId>com.example</groupId>
       <artifactId>credential-service</artifactId>
       <version>0.0.13-SNAPSHOT</version>
@@ -88,6 +88,15 @@
       <version>2.13.0</version>
     </dependency>
   </dependencies>
+
+  <repositories>
+    <repository>
+      <id>github</id>
+      <name>GitHub Packages</name>
+      <url>https://maven.pkg.github.com/brzydal87/credential-service.git</url>
+    </repository>
+  </repositories>
+
   <build>
     <plugins>
 
