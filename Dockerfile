@@ -6,15 +6,20 @@ ENV MAVEN_VERSION 3.8.6
 ENV MAVEN_HOME /usr/share/maven
 ENV MAVEN_CONFIG "/root/.m2"
 
-# Install Maven and other required tools
-RUN apt-get update \
-    && apt-get install -y curl tar \
-    && curl -fsSL https://apache.osuosl.org/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz -o /tmp/apache-maven.tar.gz \
-    && mkdir -p /usr/share/maven \
-    && tar xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1 \
-    && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+# Install necessary tools
+RUN apt-get update && \
+    apt-get install -y curl tar
+
+# Download and install Maven
+RUN curl -fsSL https://downloads.apache.org/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz -o /tmp/apache-maven.tar.gz && \
+    mkdir -p /usr/share/maven && \
+    tar xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1 && \
+    ln -s /usr/share/maven/bin/mvn /usr/bin/mvn && \
+    rm -f /tmp/apache-maven.tar.gz
+
+# Clean up APT when done
+RUN apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # Set the working directory
 WORKDIR /app
