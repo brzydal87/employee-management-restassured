@@ -2,7 +2,7 @@
 FROM openjdk:21-jdk-slim
 
 # Set the environment variables for Maven installation
-ENV MAVEN_VERSION 3.8.6
+ENV MAVEN_VERSION 3.9.8
 ENV MAVEN_HOME /usr/share/maven
 ENV MAVEN_CONFIG "/root/.m2"
 
